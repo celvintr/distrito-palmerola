@@ -1,0 +1,19 @@
+# SO / editores
+Thumbs.db
+.DS_Store
+*.log
+.vscode/
+.idea/
+
+# Dependencias / build (para la fase Laravel)
+/node_modules/
+/vendor/
+.env
+.env.*
+!.env.example
+/public/storage
+/storage/*.key
+
+# Temporales
+*.tmp
+*.bak

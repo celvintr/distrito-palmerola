@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Propuesta Técnica y Económica — Sitio Web Distrito Palmerola</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink:#1a2129;--soft:#5c6672;--line:#e4ded3;--gold:#b8893f;--gold-d:#9a6f2e;
+  --paper:#fbf9f4;--card:#fff;--sans:'Inter',system-ui,sans-serif;--serif:'Cormorant Garamond',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:var(--ink);background:#eae5db;line-height:1.65;font-size:15px}
+.doc{max-width:850px;margin:24px auto;background:var(--paper);box-shadow:0 20px 60px rgba(0,0,0,.15)}
+.page{padding:60px clamp(28px,7vw,72px)}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.1;font-weight:600}
+h1{font-size:2.9rem}h2{font-size:1.9rem;margin-bottom:.2rem}h3{font-size:1.25rem;font-family:var(--sans);font-weight:700}
+p{margin-bottom:.9rem;color:#3a434e}
+.gold{color:var(--gold)}
+.kick{font:600 .72rem var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem}
+.muted{color:var(--soft)}
+a{color:var(--gold-d)}
+hr{border:0;border-top:1px solid var(--line);margin:2.2rem 0}
+ul{margin:0 0 1rem 1.1rem}li{margin-bottom:.5rem;color:#3a434e}
+strong{color:var(--ink)}
+
+/* Cover */
+.cover{background:linear-gradient(160deg,#141b23,#232f3c);color:#efeae0;min-height:1000px;display:flex;flex-direction:column;justify-content:space-between;padding:70px clamp(28px,7vw,72px)}
+.cover .mark{display:flex;align-items:center;gap:.8rem}
+.cover .mark span{display:grid;place-items:center;width:46px;height:46px;border:1px solid var(--gold);border-radius:10px;font:600 1.2rem var(--serif);color:var(--gold)}
+.cover .mark b{font:600 .9rem var(--sans);letter-spacing:.22em}
+.cover h1{color:#fff;font-size:clamp(2.4rem,6vw,3.8rem);margin:.4rem 0}
+.cover h1 em{color:var(--gold)}
+.cover .sub{color:#c7cdd4;max-width:520px;font-size:1.1rem}
+.cover .meta{display:flex;gap:2.5rem;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.15);padding-top:1.6rem}
+.cover .meta div span{display:block;font:600 .68rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#8b94a0}
+.cover .meta div b{font-weight:500;color:#efeae0}
+
+/* Blocks */
+.lead{font-size:1.15rem;color:#2a333d}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.5rem 1.6rem}
+.card h3{margin-bottom:.5rem}
+.card .ic{width:1.5rem;height:1.5rem;color:var(--gold);margin-bottom:.7rem;display:block;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.pill{display:inline-block;font:600 .7rem var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--gold-d);background:#f3ead8;border:1px solid #e7d6b3;border-radius:100px;padding:.3rem .8rem;margin:0 .3rem .5rem 0}
+
+table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.95rem}
+th,td{text-align:left;padding:.8rem .9rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 .72rem var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--soft);background:#f4efe5}
+td.r,th.r{text-align:right;white-space:nowrap}
+tr.total td{border-top:2px solid var(--gold);border-bottom:0;font-weight:700;font-size:1.05rem}
+tr.total td .gold{font-size:1.15rem}
+
+.pkg{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.pkg .p{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.pkg .p.best{border-color:var(--gold);box-shadow:0 10px 30px rgba(184,137,63,.15)}
+.pkg .p .top{padding:1.3rem;border-bottom:1px solid var(--line)}
+.pkg .p.best .top{background:linear-gradient(160deg,#f7edd8,#fdf9f0)}
+.pkg .p h4{font-size:1.15rem}
+.pkg .price{font:600 1.7rem var(--serif);color:var(--ink);margin-top:.3rem}
+.pkg .price small{font:500 .8rem var(--sans);color:var(--soft)}
+.pkg .p ul{margin:1rem 1.2rem;font-size:.86rem}
+.pkg .p li{margin-bottom:.45rem}
+.tag-best{display:inline-block;font:700 .62rem var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--gold);border-radius:100px;padding:.2rem .6rem;margin-bottom:.5rem}
+
+.timeline{list-style:none;margin:1rem 0 0;padding:0}
+.timeline li{position:relative;padding:0 0 1.3rem 2rem;border-left:2px solid var(--line);margin-left:.3rem}
+.timeline li::before{content:"";position:absolute;left:-8px;top:2px;width:14px;height:14px;border-radius:50%;background:var(--gold);border:3px solid var(--paper)}
+.timeline b{display:block}
+.timeline .wk{font:600 .72rem var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--gold-d)}
+
+.note{background:#f3ead8;border-left:3px solid var(--gold);padding:1rem 1.2rem;border-radius:0 8px 8px 0;font-size:.9rem;color:#5a4a2c;margin:1.2rem 0}
+.sec-num{font:600 .8rem var(--sans);color:var(--gold);letter-spacing:.1em}
+.foot{background:#141b23;color:#c7cdd4;padding:40px clamp(28px,7vw,72px);text-align:center}
+.foot b{color:#fff;font-family:var(--serif);font-size:1.4rem;font-weight:600}
+.foot .lines{margin-top:.6rem;font-size:.9rem}
+.editable{color:#b8893f;font-style:italic}
+@media print{
+  body{background:#fff;font-size:12px}
+  .doc{box-shadow:none;margin:0;max-width:100%}
+  .page,.cover{page-break-inside:avoid}
+  .cover{min-height:100vh}
+  .no-print{display:none}
+}
+@media(max-width:640px){.two,.pkg{grid-template-columns:1fr}.cover .meta{gap:1.2rem}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="c-building" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4M10 10h4M10 14h4M10 18h4"/></symbol>
+  <symbol id="c-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></symbol>
+  <symbol id="c-plane" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></symbol>
+  <symbol id="c-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
+  <symbol id="c-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="c-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></symbol>
+</defs></svg>
+
+<div class="doc">
+
+  <!-- ===== Portada ===== -->
+  <section class="cover">
+    <div class="mark"><span>DP</span><b>HONDUWEB · ESTUDIO DIGITAL</b></div>
+    <div>
+      <p class="kick" style="color:var(--gold)">Propuesta Técnica y Económica</p>
+      <h1>Sitio Web Oficial<br /><em>Distrito Palmerola</em></h1>
+      <p class="sub">Diseño, desarrollo y plataforma autoadministrable para el primer distrito de usos mixtos junto al Aeropuerto Internacional de Palmerola.</p>
+    </div>
+    <div class="meta">
+      <div><span>Preparado para</span><b>CIMA PROPERTIES</b></div>
+      <div><span>Proyecto</span><b>Distrito Palmerola</b></div>
+      <div><span>Preparado por</span><b>HONDUWEB</b></div>
+      <div><span>Fecha</span><b>28 de agosto, 2026</b></div>
+      <div><span>Validez</span><b>30 días</b></div>
+    </div>
+  </section>
+
+  <!-- ===== 1. Entendimiento ===== -->
+  <section class="page">
+    <p class="kick">01 — Entendimiento del proyecto</p>
+    <h2>Una marca que debe verse tan ambiciosa como el proyecto.</h2>
+    <p class="lead">Distrito Palmerola no es un desarrollo más: es un hito para el centro de Honduras. Su sitio web debe transmitir esa escala desde el primer segundo, generar confianza en inversionistas y compradores, y convertir visitas en citas y leads calificados.</p>
+    <p>Nuestra propuesta parte de un principio: <strong>un sitio que impresione y venda</strong>, construido sobre una plataforma que ustedes mismos puedan administrar sin depender de programadores para cada cambio. Diseño de nivel internacional, rendimiento impecable en celular y una estructura pensada para posicionarse en Google.</p>
+    <div class="note">Ya cuentan con <strong>hosting y dominio propios</strong>. La propuesta se ajusta a ese escenario: entregamos el sitio listo para desplegar en su infraestructura, sin costos recurrentes de terceros obligatorios.</div>
+  </section>
+
+  <hr class="page" style="padding-top:0;padding-bottom:0" />
+
+  <!-- ===== 2. Alcance ===== -->
+  <section class="page">
+    <p class="kick">02 — Alcance de la solución</p>
+    <h2>Qué incluye el sitio.</h2>
+    <div class="two" style="margin-top:1.4rem">
+      <div class="card"><svg class="ic"><use href="#c-building"/></svg><h3>Sitio institucional premium</h3><p class="muted">Landing cinematográfica de una sola página (o multipágina) con las secciones del distrito: concepto, ubicación, masterplan, amenidades, galería, inversión y contacto.</p></div>
+      <div class="card"><svg class="ic"><use href="#c-settings"/></svg><h3>Panel autoadministrable (CMS)</h3><p class="muted">Ustedes editan textos, imágenes, renders, zonas del masterplan, galería y datos de contacto desde un panel simple, sin tocar código.</p></div>
+      <div class="card"><svg class="ic"><use href="#c-plane"/></svg><h3>Sección de ubicación</h3><p class="muted">Mapa interactivo y beneficios logísticos por la cercanía al aeropuerto y al corredor CA-5.</p></div>
+      <div class="card"><svg class="ic"><use href="#c-layers"/></svg><h3>Masterplan por zonas</h3><p class="muted">Residencial, corporativo, comercial, gastronomía y hotelería — cada zona con su ficha administrable.</p></div>
+      <div class="card"><svg class="ic"><use href="#c-mail"/></svg><h3>Captura de leads</h3><p class="muted">Formulario de contacto con envío a correo y/o WhatsApp, y registro de prospectos interesados.</p></div>
+      <div class="card"><svg class="ic"><use href="#c-image"/></svg><h3>Galería de renders</h3><p class="muted">Espacio para renders oficiales, recorridos y fases del proyecto, actualizable desde el panel.</p></div>
+    </div>
+    <h3 style="margin:2rem 0 .8rem">Incluido en todos los paquetes</h3>
+    <span class="pill">Diseño 100% a medida</span><span class="pill">Responsive (celular / tablet)</span><span class="pill">Optimización SEO base</span><span class="pill">Carga rápida</span><span class="pill">Certificado SSL</span><span class="pill">Google Analytics</span><span class="pill">WhatsApp directo</span><span class="pill">Redes sociales</span><span class="pill">Favicon + Open Graph</span>
+  </section>
+
+  <hr class="page" style="padding-top:0;padding-bottom:0" />
+
+  <!-- ===== 3. Propuesta técnica ===== -->
+  <section class="page">
+    <p class="kick">03 — Propuesta técnica</p>
+    <h2>Cómo lo construimos.</h2>
+    <table>
+      <tr><th style="width:34%">Componente</th><th>Detalle</th></tr>
+      <tr><td><strong>Frontend</strong></td><td>HTML5, CSS3 y JavaScript optimizado. Animaciones ligeras, sin librerías pesadas. Puntuación alta en Google PageSpeed.</td></tr>
+      <tr><td><strong>Plataforma administrable</strong></td><td>CMS (WordPress a medida o panel headless liviano) para editar contenido, imágenes y secciones sin conocimientos técnicos.</td></tr>
+      <tr><td><strong>Hosting &amp; dominio</strong></td><td>Se despliega en el <strong>hosting y dominio del cliente</strong>. Configuramos DNS, SSL y correos si se requiere.</td></tr>
+      <tr><td><strong>Responsive</strong></td><td>Diseño mobile-first probado en celular, tablet y escritorio.</td></tr>
+      <tr><td><strong>SEO</strong></td><td>Estructura semántica, metadatos, sitemap.xml, robots.txt, datos estructurados y Open Graph para redes.</td></tr>
+      <tr><td><strong>Seguridad</strong></td><td>SSL, buenas prácticas de hardening, respaldos y formulario con protección anti-spam.</td></tr>
+      <tr><td><strong>Analítica</strong></td><td>Google Analytics 4 y píxel de Meta (opcional) para medir campañas.</td></tr>
+      <tr><td><strong>Multiidioma</strong></td><td>Español / Inglés opcional — ideal para inversión extranjera (add-on).</td></tr>
+    </table>
+    <div class="note">El sitio se entrega con <strong>capacitación de uso del panel</strong> (videollamada + guía), para que su equipo administre el contenido con total autonomía.</div>
+  </section>
+
+  <hr class="page" style="padding-top:0;padding-bottom:0" />
+
+  <!-- ===== 4. Cronograma ===== -->
+  <section class="page">
+    <p class="kick">04 — Cronograma estimado</p>
+    <h2>De la firma al lanzamiento.</h2>
+    <ul class="timeline">
+      <li><span class="wk">Semana 1</span><b>Descubrimiento &amp; contenido</b>Reunión inicial, recopilación de textos, logos y renders, definición de arquitectura.</li>
+      <li><span class="wk">Semana 1–2</span><b>Diseño UI</b>Diseño visual de la página y aprobación del cliente.</li>
+      <li><span class="wk">Semana 2–3</span><b>Desarrollo &amp; CMS</b>Maquetación, montaje del panel autoadministrable y carga de contenido.</li>
+      <li><span class="wk">Semana 4</span><b>Pruebas, SEO &amp; lanzamiento</b>QA en dispositivos, optimización, despliegue en su hosting y capacitación.</li>
+    </ul>
+    <p class="muted" style="margin-top:1rem">Tiempo total estimado: <strong>3 a 4 semanas</strong> a partir de la entrega de contenido y anticipo. Sujeto a disponibilidad de renders/material del cliente.</p>
+  </section>
+
+  <hr class="page" style="padding-top:0;padding-bottom:0" />
+
+  <!-- ===== 5. Inversión ===== -->
+  <section class="page">
+    <p class="kick">05 — Inversión</p>
+    <h2>Paquetes.</h2>
+    <p class="muted" style="margin-bottom:1.4rem">Cifras de referencia en dólares (USD). <span class="editable">Ajustables por HONDUWEB antes de enviar al cliente.</span></p>
+    <div class="pkg">
+      <div class="p">
+        <div class="top"><h4>Esencial</h4><div class="price">$850 <small>USD</small></div><p class="muted" style="font-size:.82rem;margin:0">Landing de alto impacto.</p></div>
+        <ul>
+          <li>Landing de una página</li>
+          <li>Diseño a medida + responsive</li>
+          <li>Formulario de contacto</li>
+          <li>SEO base + Analytics</li>
+          <li>Contenido editable básico</li>
+          <li>Capacitación 1 sesión</li>
+        </ul>
+      </div>
+      <div class="p best">
+        <div class="top"><span class="tag-best">Recomendado</span><h4>Distrito</h4><div class="price">$1,650 <small>USD</small></div><p class="muted" style="font-size:.82rem;margin:0">Sitio completo autoadministrable.</p></div>
+        <ul>
+          <li>Todo lo de Esencial, más:</li>
+          <li><strong>CMS autoadministrable completo</strong></li>
+          <li>Masterplan por zonas editable</li>
+          <li>Galería de renders administrable</li>
+          <li>Mapa de ubicación interactivo</li>
+          <li>WhatsApp + captura de leads</li>
+          <li>Datos estructurados (SEO+)</li>
+          <li>Capacitación + guía en video</li>
+        </ul>
+      </div>
+      <div class="p">
+        <div class="top"><h4>Premium</h4><div class="price">$2,900 <small>USD</small></div><p class="muted" style="font-size:.82rem;margin:0">Experiencia + marketing.</p></div>
+        <ul>
+          <li>Todo lo de Distrito, más:</li>
+          <li>Multiidioma (ES / EN)</li>
+          <li>Sección de blog / novedades</li>
+          <li>Integración CRM / correo masivo</li>
+          <li>Landing de campaña adicional</li>
+          <li>Sesión de fotos/render coord.</li>
+          <li>Soporte prioritario 3 meses</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin:2.2rem 0 .6rem">Complementos opcionales</h3>
+    <table>
+      <tr><th>Add-on</th><th class="r">Inversión (USD)</th></tr>
+      <tr><td>Recorrido virtual 360° / video dron editado</td><td class="r">$450</td></tr>
+      <tr><td>Multiidioma adicional (por idioma)</td><td class="r">$300</td></tr>
+      <tr><td>Campañas Google/Meta Ads (setup)</td><td class="r">$350</td></tr>
+      <tr><td>Mantenimiento y actualizaciones (mensual)</td><td class="r">$90 / mes</td></tr>
+      <tr class="total"><td>Paquete recomendado “Distrito”</td><td class="r gold">$1,650 USD</td></tr>
+    </table>
+    <div class="note"><strong>Forma de pago sugerida:</strong> 50% de anticipo para iniciar y 50% contra entrega y aprobación. <span class="editable">HONDUWEB define condiciones finales.</span></div>
+  </section>
+
+  <hr class="page" style="padding-top:0;padding-bottom:0" />
+
+  <!-- ===== 6. Por qué ===== -->
+  <section class="page">
+    <p class="kick">06 — Por qué HONDUWEB</p>
+    <h2>Un aliado, no solo un proveedor.</h2>
+    <div class="two" style="margin-top:1.2rem">
+      <div class="card"><h3>Diseño que impresiona</h3><p class="muted">Sitios de nivel internacional, pensados para vender un proyecto inmobiliario premium.</p></div>
+      <div class="card"><h3>Autonomía real</h3><p class="muted">Panel simple para que su equipo actualice renders, fases y precios sin depender de nadie.</p></div>
+      <div class="card"><h3>Enfoque en resultados</h3><p class="muted">SEO, velocidad y captura de leads: el sitio trabaja para llenar su base de prospectos.</p></div>
+      <div class="card"><h3>Acompañamiento local</h3><p class="muted">Comunicación directa, capacitación y soporte cercano en Honduras.</p></div>
+    </div>
+    <hr />
+    <h3 style="margin-bottom:.6rem">Siguiente paso</h3>
+    <p>Con su aprobación del paquete, agendamos la reunión de descubrimiento y comenzamos de inmediato. Podemos tener una versión demostrativa navegable en pocos días.</p>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <div class="foot">
+    <b>HONDUWEB</b>
+    <div class="lines">
+      <p><span class="editable">contacto@honduweb.net · +504 0000-0000 · honduweb.net</span></p>
+      <p style="margin-top:.6rem;color:#7d858f;font-size:.8rem">Propuesta preparada para Distrito Palmerola · Documento confidencial · Válido por 30 días.</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
