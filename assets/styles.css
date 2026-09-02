@@ -286,6 +286,29 @@ body.subpage #nav{background:rgba(240,237,228,.95);backdrop-filter:blur(14px);bo
   .page-hero{min-height:52vh}
 }
 
+/* ---------- Mix de usos (programa) ---------- */
+.prog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:.7rem;margin-top:clamp(1.8rem,4vw,2.6rem)}
+.prog{display:flex;align-items:center;gap:.65rem;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:.85rem 1rem;font-size:.9rem;color:var(--ink);transition:.3s}
+.prog:hover{border-color:var(--olive);transform:translateY(-2px)}
+.prog img{width:15px;height:15px;flex:none;opacity:.8}
+
+/* ---------- Aliados de diseño ---------- */
+.aliados{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;margin-top:2rem}
+.aliado{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:clamp(1.6rem,3vw,2.2rem)}
+.aliado .role{font:600 .68rem var(--body-f);letter-spacing:.14em;text-transform:uppercase;color:var(--olive);margin-bottom:.5rem;display:block}
+.aliado h4{font:400 1.5rem var(--display);color:var(--ink);margin-bottom:.5rem}
+.aliado p{color:var(--body);font-size:.92rem;margin-bottom:1rem}
+.aliado .refs{display:flex;flex-wrap:wrap;gap:.4rem}
+.aliado .refs span{font-size:.72rem;color:var(--soft);background:var(--paper);border:1px solid var(--line);border-radius:100px;padding:.28rem .65rem}
+@media(max-width:760px){.aliados{grid-template-columns:1fr}}
+
+/* ---------- Láminas del plan ---------- */
+.plates{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:clamp(1.8rem,4vw,2.6rem)}
+.plate{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--card)}
+.plate img{width:100%;height:auto;display:block}
+.plate figcaption{padding:.85rem 1.1rem;font-size:.82rem;color:var(--soft);border-top:1px solid var(--line)}
+@media(max-width:760px){.plates{grid-template-columns:1fr}}
+
 /* ---------- Tablas de datos ---------- */
 .data-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3rem);margin-top:clamp(1.8rem,4vw,2.6rem)}
 .data-card h4{font:400 1.2rem var(--display);color:var(--ink);margin-bottom:.4rem}
