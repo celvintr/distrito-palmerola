@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Panel — Distrito Palmerola</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/png" href="../assets/img/brand/mark.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/panel.css" />
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65M22 12.65l-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></symbol>
+  <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 10 10 4 4 0 0 1-4 4h-2a2 2 0 0 0-2 2 2 2 0 0 1-2 2z"/><circle cx="13.5" cy="6.5" r=".8"/><circle cx="17.5" cy="10.5" r=".8"/><circle cx="8.5" cy="7.5" r=".8"/><circle cx="6.5" cy="12.5" r=".8"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><path d="M20 7h-9M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+  <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></symbol>
+</defs></svg>
+
+<div class="app">
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="side-brand"><img src="../assets/img/brand/logo.png" alt="Distrito Palmerola" /></div>
+    <nav class="side-nav">
+      <div class="side-label">General</div>
+      <button class="nav-item active" data-sec="resumen"><svg class="ico"><use href="#i-grid"/></svg> Resumen</button>
+      <button class="nav-item" data-sec="proyectos"><svg class="ico"><use href="#i-layers"/></svg> Proyectos &amp; zonas</button>
+      <button class="nav-item" data-sec="galeria"><svg class="ico"><use href="#i-image"/></svg> Galería</button>
+      <button class="nav-item" data-sec="prospectos"><svg class="ico"><use href="#i-inbox"/></svg> Prospectos <span class="badge">37</span></button>
+      <div class="side-label">Sitio</div>
+      <button class="nav-item" data-sec="identidad"><svg class="ico"><use href="#i-palette"/></svg> Identidad de marca</button>
+      <button class="nav-item" data-sec="config"><svg class="ico"><use href="#i-settings"/></svg> Configuración</button>
+      <a class="nav-item" href="../index.html" target="_blank"><svg class="ico"><use href="#i-external"/></svg> Ver sitio</a>
+    </nav>
+    <div class="side-user">
+      <span class="avatar">CT</span>
+      <div class="u"><b>Celvin T.</b><span>Administrador</span></div>
+      <a href="index.html" title="Salir"><svg class="ico"><use href="#i-logout"/></svg></a>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar">
+      <button class="burger" id="burger" aria-label="Menú"><svg class="ico"><use href="#i-menu"/></svg></button>
+      <div><div class="crumb">Distrito Palmerola</div><h2 id="pageTitle">Resumen</h2></div>
+      <div class="search"><svg class="ico"><use href="#i-search"/></svg><input placeholder="Buscar…" /></div>
+      <div class="top-ico"><svg class="ico"><use href="#i-bell"/></svg><span class="dot"></span></div>
+      <span class="avatar">CT</span>
+    </div>
+
+    <div class="content">
+      <!-- RESUMEN -->
+      <section class="section active" id="sec-resumen">
+        <div class="stat-grid">
+          <div class="stat-card"><div class="top"><span class="lbl">Visitas del mes</span><svg class="ico"><use href="#i-eye"/></svg></div><div class="val">4,820</div><div class="delta up">▲ 12% vs. mes anterior</div></div>
+          <div class="stat-card"><div class="top"><span class="lbl">Prospectos nuevos</span><svg class="ico"><use href="#i-inbox"/></svg></div><div class="val">37</div><div class="delta up">▲ 8 esta semana</div></div>
+          <div class="stat-card"><div class="top"><span class="lbl">Proyectos publicados</span><svg class="ico"><use href="#i-layers"/></svg></div><div class="val">6</div><div class="delta">2 en borrador</div></div>
+          <div class="stat-card"><div class="top"><span class="lbl">Última actualización</span><svg class="ico"><use href="#i-edit"/></svg></div><div class="val">Hoy</div><div class="delta">por Celvin T.</div></div>
+        </div>
+        <div class="card">
+          <div class="card-h"><h4>Prospectos recientes</h4><button class="btn btn-ghost btn-sm" data-goto="prospectos">Ver todos</button></div>
+          <div class="card-b"><table>
+            <thead><tr><th>Nombre</th><th>Interés</th><th>Fecha</th><th>Estado</th></tr></thead>
+            <tbody>
+              <tr><td class="name">María Fernández</td><td>Residencial</td><td>Hoy, 10:24</td><td><span class="pill new"><span class="d"></span>Nuevo</span></td></tr>
+              <tr><td class="name">Grupo Lovable S.A.</td><td>Corporativo / Oficinas</td><td>Ayer</td><td><span class="pill new"><span class="d"></span>Nuevo</span></td></tr>
+              <tr><td class="name">Carlos Medina</td><td>Inversión</td><td>Ayer</td><td><span class="pill pub"><span class="d"></span>Contactado</span></td></tr>
+              <tr><td class="name">Inversiones del Valle</td><td>Comercial / Retail</td><td>2 días</td><td><span class="pill pub"><span class="d"></span>Contactado</span></td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </section>
+
+      <!-- PROYECTOS -->
+      <section class="section" id="sec-proyectos">
+        <div class="page-head"><div><h3>Proyectos &amp; zonas</h3><p>Crea, edita, publica y ordena las zonas del distrito.</p></div><button class="btn btn-primary btn-sm" data-goto="proyectos"><svg class="ico"><use href="#i-plus"/></svg> Nuevo proyecto</button></div>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-b"><table>
+              <thead><tr><th>Zona / proyecto</th><th>Orden</th><th>Estado</th><th></th></tr></thead>
+              <tbody>
+                <tr><td><div style="display:flex;align-items:center;gap:.7rem"><img class="thumb" src="../assets/img/hotel-tru.jpg" alt=""><span class="name">Hotel Tru by Hilton</span></div></td><td class="mono">01</td><td><span class="pill pub"><span class="d"></span>Publicado</span></td><td><div class="row-actions"><button class="icon-btn"><svg class="ico"><use href="#i-edit"/></svg></button><button class="icon-btn del"><svg class="ico"><use href="#i-trash"/></svg></button></div></td></tr>
+                <tr><td><div style="display:flex;align-items:center;gap:.7rem"><img class="thumb" src="../assets/img/plaza-vida.jpg" alt=""><span class="name">Plaza Raíces</span></div></td><td class="mono">02</td><td><span class="pill pub"><span class="d"></span>Publicado</span></td><td><div class="row-actions"><button class="icon-btn"><svg class="ico"><use href="#i-edit"/></svg></button><button class="icon-btn del"><svg class="ico"><use href="#i-trash"/></svg></button></div></td></tr>
+                <tr><td><div style="display:flex;align-items:center;gap:.7rem"><img class="thumb" src="../assets/img/residencial.jpg" alt=""><span class="name">Residencial</span></div></td><td class="mono">03</td><td><span class="pill pub"><span class="d"></span>Publicado</span></td><td><div class="row-actions"><button class="icon-btn"><svg class="ico"><use href="#i-edit"/></svg></button><button class="icon-btn del"><svg class="ico"><use href="#i-trash"/></svg></button></div></td></tr>
+                <tr><td><div style="display:flex;align-items:center;gap:.7rem"><img class="thumb" src="../assets/img/parque.jpg" alt=""><span class="name">Parque El Mirador</span></div></td><td class="mono">04</td><td><span class="pill pub"><span class="d"></span>Publicado</span></td><td><div class="row-actions"><button class="icon-btn"><svg class="ico"><use href="#i-edit"/></svg></button><button class="icon-btn del"><svg class="ico"><use href="#i-trash"/></svg></button></div></td></tr>
+                <tr><td><div style="display:flex;align-items:center;gap:.7rem"><img class="thumb" src="../assets/img/hotel-gym.jpg" alt=""><span class="name">Centro de convenciones</span></div></td><td class="mono">05</td><td><span class="pill draft"><span class="d"></span>Borrador</span></td><td><div class="row-actions"><button class="icon-btn"><svg class="ico"><use href="#i-edit"/></svg></button><button class="icon-btn del"><svg class="ico"><use href="#i-trash"/></svg></button></div></td></tr>
+              </tbody>
+            </table></div>
+          </div>
+          <div class="card card-pad">
+            <h4 style="margin-bottom:1rem;color:var(--ink)">Nuevo proyecto</h4>
+            <div class="form-grid">
+              <div class="field full"><label>Nombre</label><input placeholder="Ej. Torre Corporativa"></div>
+              <div class="field"><label>Zona</label><select><option>Residencial</option><option>Corporativo</option><option>Comercial</option><option>Hotel</option><option>Parque</option></select></div>
+              <div class="field"><label>Estado</label><select><option>Publicado</option><option>Borrador</option></select></div>
+              <div class="field full"><label>Descripción</label><textarea rows="3" placeholder="Describe el proyecto…"></textarea></div>
+              <div class="field full"><label>Imagen</label><div class="drop"><svg class="ico"><use href="#i-upload"/></svg><b>Arrastra una imagen</b> o haz clic para subir</div></div>
+            </div>
+            <button class="btn btn-primary btn-block" style="margin-top:1rem"><svg class="ico"><use href="#i-plus"/></svg> Guardar proyecto</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIA -->
+      <section class="section" id="sec-galeria">
+        <div class="page-head"><div><h3>Galería</h3><p>Sube y organiza los renders e imágenes del proyecto.</p></div><button class="btn btn-primary btn-sm"><svg class="ico"><use href="#i-upload"/></svg> Subir imágenes</button></div>
+        <div class="card card-pad">
+          <div class="drop" style="margin-bottom:18px"><svg class="ico"><use href="#i-upload"/></svg><b>Arrastra tus imágenes aquí</b> o haz clic para seleccionarlas · JPG, PNG hasta 10&nbsp;MB</div>
+          <div class="gal-grid">
+            <div class="gal-item"><img src="../assets/img/masterplan-axon.jpg" alt=""><span class="x"><svg class="ico"><use href="#i-trash"/></svg></span></div>
+            <div class="gal-item"><img src="../assets/img/hotel-pool.jpg" alt=""><span class="x"><svg class="ico"><use href="#i-trash"/></svg></span></div>
+            <div class="gal-item"><img src="../assets/img/residencial.jpg" alt=""><span class="x"><svg class="ico"><use href="#i-trash"/></svg></span></div>
+            <div class="gal-item"><img src="../assets/img/plaza-vida.jpg" alt=""><span class="x"><svg class="ico"><use href="#i-trash"/></svg></span></div>
+            <div class="gal-item"><img src="../assets/img/hotel-tru.jpg" alt=""><span class="x"><svg class="ico"><use href="#i-trash"/></svg></span></div>
+            <div class="gal-item"><img src="../assets/img/parque.jpg" alt=""><span class="x"><svg class="ico"><use href="#i-trash"/></svg></span></div>
+            <div class="gal-item"><img src="../assets/img/vida-retail.jpg" alt=""><span class="x"><svg class="ico"><use href="#i-trash"/></svg></span></div>
+            <div class="gal-item"><img src="../assets/img/hotel-room1.jpg" alt=""><span class="x"><svg class="ico"><use href="#i-trash"/></svg></span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROSPECTOS -->
+      <section class="section" id="sec-prospectos">
+        <div class="page-head"><div><h3>Prospectos</h3><p>Contactos que llegaron desde el formulario del sitio.</p></div><button class="btn btn-ghost btn-sm"><svg class="ico"><use href="#i-external"/></svg> Exportar</button></div>
+        <div class="card"><div class="card-b"><table>
+          <thead><tr><th>Nombre</th><th>Correo</th><th>Teléfono</th><th>Interés</th><th>Fecha</th><th>Estado</th></tr></thead>
+          <tbody>
+            <tr><td class="name">María Fernández</td><td>maria.f@correo.com</td><td>+504 9900-1122</td><td>Residencial</td><td>Hoy</td><td><span class="pill new"><span class="d"></span>Nuevo</span></td></tr>
+            <tr><td class="name">Grupo Lovable S.A.</td><td>contacto@lovable.hn</td><td>+504 2200-3344</td><td>Corporativo</td><td>Ayer</td><td><span class="pill new"><span class="d"></span>Nuevo</span></td></tr>
+            <tr><td class="name">Carlos Medina</td><td>cmedina@correo.com</td><td>+504 9988-7766</td><td>Inversión</td><td>Ayer</td><td><span class="pill pub"><span class="d"></span>Contactado</span></td></tr>
+            <tr><td class="name">Inversiones del Valle</td><td>info@delvalle.hn</td><td>+504 2233-4455</td><td>Comercial</td><td>2 días</td><td><span class="pill pub"><span class="d"></span>Contactado</span></td></tr>
+            <tr><td class="name">Ana Sofía Discua</td><td>asdiscua@correo.com</td><td>+504 9911-2233</td><td>Hotel / Convenciones</td><td>3 días</td><td><span class="pill pub"><span class="d"></span>Contactado</span></td></tr>
+          </tbody>
+        </table></div></div>
+      </section>
+
+      <!-- IDENTIDAD -->
+      <section class="section" id="sec-identidad">
+        <div class="page-head"><div><h3>Identidad de marca</h3><p>Cambia el logo, los colores y los datos de contacto del sitio.</p></div></div>
+        <div class="grid-2">
+          <div class="card card-pad">
+            <h4 style="margin-bottom:1rem;color:var(--ink)">Logo &amp; contacto</h4>
+            <div class="field"><label>Logotipo</label><div class="drop"><img src="../assets/img/brand/logo.png" alt="" style="height:34px;margin:0 auto 8px"><br><b>Reemplazar logo</b></div></div>
+            <div class="form-grid" style="margin-top:1rem">
+              <div class="field"><label>Correo</label><input value="info@distritopalmerola.com"></div>
+              <div class="field"><label>Teléfono</label><input value="+504 0000-0000"></div>
+              <div class="field full"><label>Dirección</label><input value="Comayagua, Honduras — Frente al Aeropuerto de Palmerola"></div>
+            </div>
+            <button class="btn btn-primary" style="margin-top:1rem">Guardar cambios</button>
+          </div>
+          <div class="card card-pad">
+            <h4 style="margin-bottom:1rem;color:var(--ink)">Colores de marca</h4>
+            <div class="color-row"><span class="swatch" style="background:#6a6954"></span><div><b style="color:var(--ink)">Olivo</b><div class="help mono">#6A6954</div></div></div>
+            <div class="color-row"><span class="swatch" style="background:#9d9f8a"></span><div><b style="color:var(--ink)">Sage</b><div class="help mono">#9D9F8A</div></div></div>
+            <div class="color-row"><span class="swatch" style="background:#f1ede1"></span><div><b style="color:var(--ink)">Crema</b><div class="help mono">#F1EDE1</div></div></div>
+            <div class="color-row"><span class="swatch" style="background:#33322a"></span><div><b style="color:var(--ink)">Tinta</b><div class="help mono">#33322A</div></div></div>
+            <p class="help" style="margin-top:1rem">Estos colores se aplican automáticamente a todo el sitio público.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONFIG -->
+      <section class="section" id="sec-config">
+        <div class="page-head"><div><h3>Configuración</h3><p>Ajustes generales del sitio.</p></div></div>
+        <div class="card card-pad" style="max-width:620px">
+          <div class="setting-row"><div><b>Formulario de contacto</b><br><span>Recibir prospectos desde el sitio</span></div><span class="toggle"></span></div>
+          <div class="setting-row"><div><b>Mostrar sección de inversión</b><br><span>Visible en el menú público</span></div><span class="toggle"></span></div>
+          <div class="setting-row"><div><b>Modo mantenimiento</b><br><span>Ocultar el sitio temporalmente</span></div><span class="toggle off"></span></div>
+          <div class="setting-row"><div><b>Idioma del sitio</b><br><span>Idioma principal</span></div><select style="width:auto;border:1px solid var(--line);border-radius:8px;padding:.5rem .8rem;font:400 .85rem var(--sans);color:var(--ink);background:#f7f8f4"><option>Español</option><option>Español / Inglés</option></select></div>
+          <button class="btn btn-primary" style="margin-top:1.2rem">Guardar configuración</button>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="demo-tag">DEMO · Panel de administración</div>
+
+<script>
+(function(){
+  var titles={resumen:'Resumen',proyectos:'Proyectos & zonas',galeria:'Galería',prospectos:'Prospectos',identidad:'Identidad de marca',config:'Configuración'};
+  function go(sec){
+    document.querySelectorAll('.nav-item').forEach(function(n){n.classList.toggle('active',n.dataset.sec===sec);});
+    document.querySelectorAll('.section').forEach(function(s){s.classList.toggle('active',s.id==='sec-'+sec);});
+    document.getElementById('pageTitle').textContent=titles[sec]||'Panel';
+    document.getElementById('sidebar').classList.remove('open');
+    window.scrollTo(0,0);
+  }
+  document.querySelectorAll('.nav-item[data-sec]').forEach(function(n){n.addEventListener('click',function(){go(n.dataset.sec);});});
+  document.querySelectorAll('[data-goto]').forEach(function(b){b.addEventListener('click',function(){go(b.dataset.goto);});});
+  document.getElementById('burger').addEventListener('click',function(){document.getElementById('sidebar').classList.toggle('open');});
+  document.querySelectorAll('.toggle').forEach(function(t){t.addEventListener('click',function(){t.classList.toggle('off');});});
+})();
+</script>
+</body>
+</html>
