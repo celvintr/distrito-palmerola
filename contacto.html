@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contacto — Distrito Palmerola</title>
+<meta name="description" content="Contacta al equipo de Distrito Palmerola. Solicita el brochure, disponibilidad y planes de inversión. Un desarrollo de CIMA PROPERTIES en Comayagua, Honduras." />
+<meta name="theme-color" content="#6a6954" />
+<link rel="icon" type="image/png" href="assets/img/brand/mark.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="subpage">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+</defs></svg>
+
+<header id="nav" class="solid">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><img src="assets/img/brand/logo.png" alt="Distrito Palmerola" /></a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="proyecto.html">El Proyecto</a>
+      <a href="ubicacion.html">Ubicación</a>
+      <a href="plan-maestro.html">Plan Maestro</a>
+      <a href="fase-1.html">Fase 1</a>
+      <a href="inversion.html">Inversión</a>
+      <a href="contacto.html" class="nav-cta">Agenda una visita</a>
+    </nav>
+    <button id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div id="mobile-menu" aria-hidden="true">
+  <a href="index.html">Inicio</a><a href="proyecto.html">El Proyecto</a><a href="ubicacion.html">Ubicación</a><a href="plan-maestro.html">Plan Maestro</a><a href="fase-1.html">Fase 1</a><a href="inversion.html">Inversión</a><a href="contacto.html" class="nav-cta">Agenda una visita</a>
+</div>
+
+<main>
+  <section class="section contacto" style="padding-top:clamp(150px,18vh,220px)">
+    <div class="wrap cta-wrap">
+      <div class="cta-copy">
+        <p class="eyebrow">Conversemos</p>
+        <h2>Sé parte de Distrito Palmerola.</h2>
+        <p class="lead">Déjanos tus datos y un asesor te compartirá el brochure, la disponibilidad y los planes de inversión del proyecto.</p>
+        <div class="contact-lines">
+          <a href="mailto:info@distritopalmerola.com"><svg class="ico" style="color:var(--olive)"><use href="#i-mail"/></svg> info@distritopalmerola.com</a>
+          <a href="tel:+50400000000"><svg class="ico" style="color:var(--olive)"><use href="#i-pin"/></svg> +504 0000-0000</a>
+          <span><svg class="ico" style="color:var(--olive)"><use href="#i-pin"/></svg> Comayagua, Honduras · Frente al Aeropuerto de Palmerola</span>
+        </div>
+      </div>
+      <form class="cta-form" onsubmit="return DP.submit(event)">
+        <div class="field"><label>Nombre completo</label><input type="text" name="nombre" required placeholder="Tu nombre" /></div>
+        <div class="field-row">
+          <div class="field"><label>Correo</label><input type="email" name="email" required placeholder="tu@correo.com" /></div>
+          <div class="field"><label>Teléfono</label><input type="tel" name="tel" placeholder="+504" /></div>
+        </div>
+        <div class="field"><label>Interés</label>
+          <select name="interes"><option>Residencial</option><option>Comercial / Oficinas</option><option>Industria / Logística</option><option>Hotel / Convenciones</option><option>Inversión</option></select>
+        </div>
+        <div class="field"><label>Mensaje (opcional)</label><textarea name="msg" rows="3" placeholder="Cuéntanos qué buscas"></textarea></div>
+        <button class="btn btn-solid full" type="submit">Solicitar información <svg class="ico"><use href="#i-arrow"/></svg></button>
+        <p class="form-ok" id="formOk" hidden><svg class="ico"><use href="#i-check"/></svg> Gracias. Te contactamos muy pronto.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer id="footer">
+  <div class="wrap foot-top">
+    <div class="foot-brand"><img src="assets/img/brand/logo.png" alt="Distrito Palmerola" /><p>Un nuevo reencuentro, diseñado para la vida. Un desarrollo de CIMA PROPERTIES.</p></div>
+    <nav class="foot-nav" aria-label="Pie"><a href="proyecto.html">El Proyecto</a><a href="ubicacion.html">Ubicación</a><a href="plan-maestro.html">Plan Maestro</a><a href="fase-1.html">Fase 1</a><a href="inversion.html">Inversión</a><a href="contacto.html">Contacto</a></nav>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>Un desarrollo de <strong>CIMA PROPERTIES</strong> · Plan maestro por GEHL &amp; Castillo Arquitectos</span>
+    <span>© <span id="yr"></span> Distrito Palmerola · Sitio por <a href="https://www.honduweb.net">HonduWeb</a></span>
+  </div>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>
