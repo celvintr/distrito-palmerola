@@ -286,6 +286,19 @@ body.subpage #nav{background:rgba(240,237,228,.95);backdrop-filter:blur(14px);bo
   .page-hero{min-height:52vh}
 }
 
+/* ---------- Tablas de datos ---------- */
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3rem);margin-top:clamp(1.8rem,4vw,2.6rem)}
+.data-card h4{font:400 1.2rem var(--display);color:var(--ink);margin-bottom:.4rem}
+.data-card .sub{color:var(--soft);font-size:.85rem;margin-bottom:1rem}
+.dt{width:100%;border-collapse:collapse}
+.dt td{padding:.7rem 0;border-bottom:1px solid var(--line);font-size:.92rem;color:var(--body);vertical-align:baseline}
+.dt tr:last-child td{border-bottom:0}
+.dt td small{color:var(--soft);display:block;font-size:.78rem;margin-top:.15rem}
+.dt td:last-child{text-align:right;color:var(--olive);font-weight:600;font-family:var(--display);font-size:1.15rem;white-space:nowrap;padding-left:1rem}
+.dt tr.tot td{border-top:2px solid var(--olive);border-bottom:0;padding-top:.9rem}
+.dt tr.tot td:first-child{font-weight:600;color:var(--ink)}
+@media(max-width:760px){.data-grid{grid-template-columns:1fr}}
+
 /* ---------- Galería (página) ---------- */
 .gal-cat{margin-top:clamp(2.4rem,5vw,3.6rem)}
 .gal-cat h3{font:400 1.5rem var(--display);color:var(--ink);margin-bottom:1.2rem;display:flex;align-items:center;gap:.8rem}
