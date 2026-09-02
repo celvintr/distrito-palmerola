@@ -367,7 +367,9 @@ body.subpage #nav{background:rgba(240,237,228,.95);backdrop-filter:blur(14px);bo
 .plate{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--card)}
 .plate img{width:100%;height:auto;display:block}
 .plate figcaption{padding:.85rem 1.1rem;font-size:.82rem;color:var(--soft);border-top:1px solid var(--line)}
-@media(max-width:760px){.plates{grid-template-columns:1fr}}
+.plates .plate.zoom{cursor:zoom-in}
+.plates .plate.wide{grid-column:1/-1}
+@media(max-width:760px){.plates{grid-template-columns:1fr}.plates .plate.wide{grid-column:auto}}
 
 /* ---------- Tablas de datos ---------- */
 .data-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3rem);margin-top:clamp(1.8rem,4vw,2.6rem)}
