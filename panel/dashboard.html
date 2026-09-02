@@ -38,7 +38,7 @@
     <nav class="side-nav">
       <div class="side-label">General</div>
       <button class="nav-item active" data-sec="resumen"><svg class="ico"><use href="#i-grid"/></svg> Resumen</button>
-      <button class="nav-item" data-sec="proyectos"><svg class="ico"><use href="#i-layers"/></svg> Proyectos &amp; zonas</button>
+      <button class="nav-item" data-sec="proyectos"><svg class="ico"><use href="#i-layers"/></svg> Contenido &amp; zonas</button>
       <button class="nav-item" data-sec="galeria"><svg class="ico"><use href="#i-image"/></svg> Galería</button>
       <button class="nav-item" data-sec="prospectos"><svg class="ico"><use href="#i-inbox"/></svg> Prospectos <span class="badge">37</span></button>
       <div class="side-label">Sitio</div>
@@ -69,7 +69,7 @@
         <div class="stat-grid">
           <div class="stat-card"><div class="top"><span class="lbl">Visitas del mes</span><svg class="ico"><use href="#i-eye"/></svg></div><div class="val">4,820</div><div class="delta up">▲ 12% vs. mes anterior</div></div>
           <div class="stat-card"><div class="top"><span class="lbl">Prospectos nuevos</span><svg class="ico"><use href="#i-inbox"/></svg></div><div class="val">37</div><div class="delta up">▲ 8 esta semana</div></div>
-          <div class="stat-card"><div class="top"><span class="lbl">Proyectos publicados</span><svg class="ico"><use href="#i-layers"/></svg></div><div class="val">6</div><div class="delta">2 en borrador</div></div>
+          <div class="stat-card"><div class="top"><span class="lbl">Secciones publicadas</span><svg class="ico"><use href="#i-layers"/></svg></div><div class="val">6</div><div class="delta">1 en borrador</div></div>
           <div class="stat-card"><div class="top"><span class="lbl">Última actualización</span><svg class="ico"><use href="#i-edit"/></svg></div><div class="val">Hoy</div><div class="delta">por Celvin T.</div></div>
         </div>
         <div class="card">
@@ -88,11 +88,11 @@
 
       <!-- PROYECTOS -->
       <section class="section" id="sec-proyectos">
-        <div class="page-head"><div><h3>Proyectos &amp; zonas</h3><p>Crea, edita, publica y ordena las zonas del distrito.</p></div><button class="btn btn-primary btn-sm" data-goto="proyectos"><svg class="ico"><use href="#i-plus"/></svg> Nuevo proyecto</button></div>
+        <div class="page-head"><div><h3>Contenido &amp; zonas</h3><p>Edita, publica y ordena las secciones y zonas del sitio.</p></div><button class="btn btn-primary btn-sm" data-goto="proyectos"><svg class="ico"><use href="#i-plus"/></svg> Nueva sección</button></div>
         <div class="grid-2">
           <div class="card">
             <div class="card-b"><table>
-              <thead><tr><th>Zona / proyecto</th><th>Orden</th><th>Estado</th><th></th></tr></thead>
+              <thead><tr><th>Sección / zona</th><th>Orden</th><th>Estado</th><th></th></tr></thead>
               <tbody>
                 <tr><td><div style="display:flex;align-items:center;gap:.7rem"><img class="thumb" src="../assets/img/hotel-tru.jpg" alt=""><span class="name">Hotel Tru by Hilton</span></div></td><td class="mono">01</td><td><span class="pill pub"><span class="d"></span>Publicado</span></td><td><div class="row-actions"><button class="icon-btn"><svg class="ico"><use href="#i-edit"/></svg></button><button class="icon-btn del"><svg class="ico"><use href="#i-trash"/></svg></button></div></td></tr>
                 <tr><td><div style="display:flex;align-items:center;gap:.7rem"><img class="thumb" src="../assets/img/plaza-vida.jpg" alt=""><span class="name">Plaza Raíces</span></div></td><td class="mono">02</td><td><span class="pill pub"><span class="d"></span>Publicado</span></td><td><div class="row-actions"><button class="icon-btn"><svg class="ico"><use href="#i-edit"/></svg></button><button class="icon-btn del"><svg class="ico"><use href="#i-trash"/></svg></button></div></td></tr>
@@ -103,15 +103,15 @@
             </table></div>
           </div>
           <div class="card card-pad">
-            <h4 style="margin-bottom:1rem;color:var(--ink)">Nuevo proyecto</h4>
+            <h4 style="margin-bottom:1rem;color:var(--ink)">Nueva sección / zona</h4>
             <div class="form-grid">
-              <div class="field full"><label>Nombre</label><input placeholder="Ej. Torre Corporativa"></div>
+              <div class="field full"><label>Nombre</label><input placeholder="Ej. Comercial &amp; Retail"></div>
               <div class="field"><label>Zona</label><select><option>Residencial</option><option>Corporativo</option><option>Comercial</option><option>Hotel</option><option>Parque</option></select></div>
               <div class="field"><label>Estado</label><select><option>Publicado</option><option>Borrador</option></select></div>
               <div class="field full"><label>Descripción</label><textarea rows="3" placeholder="Describe el proyecto…"></textarea></div>
               <div class="field full"><label>Imagen</label><div class="drop"><svg class="ico"><use href="#i-upload"/></svg><b>Arrastra una imagen</b> o haz clic para subir</div></div>
             </div>
-            <button class="btn btn-primary btn-block" style="margin-top:1rem"><svg class="ico"><use href="#i-plus"/></svg> Guardar proyecto</button>
+            <button class="btn btn-primary btn-block" style="margin-top:1rem"><svg class="ico"><use href="#i-plus"/></svg> Guardar sección</button>
           </div>
         </div>
       </section>
@@ -193,7 +193,7 @@
 
 <script>
 (function(){
-  var titles={resumen:'Resumen',proyectos:'Proyectos & zonas',galeria:'Galería',prospectos:'Prospectos',identidad:'Identidad de marca',config:'Configuración'};
+  var titles={resumen:'Resumen',proyectos:'Contenido & zonas',galeria:'Galería',prospectos:'Prospectos',identidad:'Identidad de marca',config:'Configuración'};
   function go(sec){
     document.querySelectorAll('.nav-item').forEach(function(n){n.classList.toggle('active',n.dataset.sec===sec);});
     document.querySelectorAll('.section').forEach(function(s){s.classList.toggle('active',s.id==='sec-'+sec);});
