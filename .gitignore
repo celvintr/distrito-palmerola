@@ -17,3 +17,8 @@ Thumbs.db
 # Temporales
 *.tmp
 *.bak
+
+# Material crudo del cliente (no publicar) y cotizacion interna
+/.material/
+*.docx
+*.pptx
