@@ -286,6 +286,31 @@ body.subpage #nav{background:rgba(240,237,228,.95);backdrop-filter:blur(14px);bo
   .page-hero{min-height:52vh}
 }
 
+/* ---------- Galería (página) ---------- */
+.gal-cat{margin-top:clamp(2.4rem,5vw,3.6rem)}
+.gal-cat h3{font:400 1.5rem var(--display);color:var(--ink);margin-bottom:1.2rem;display:flex;align-items:center;gap:.8rem}
+.gal-cat h3::before{content:"";width:26px;height:1px;background:var(--olive)}
+.grid-gal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid-gal .g{position:relative;aspect-ratio:4/3;border-radius:6px;overflow:hidden;border:1px solid var(--line);cursor:pointer;background:var(--card)}
+.grid-gal .g.wide{grid-column:span 2}
+.grid-gal img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.grid-gal .g:hover img{transform:scale(1.05)}
+.grid-gal .cap{position:absolute;left:0;right:0;bottom:0;padding:1.6rem .9rem .7rem;background:linear-gradient(transparent,rgba(38,37,30,.82));color:#fff;font-size:.8rem;opacity:0;transition:.3s;transform:translateY(6px)}
+.grid-gal .g:hover .cap{opacity:1;transform:none}
+@media(max-width:760px){.grid-gal{grid-template-columns:1fr 1fr}.grid-gal .g.wide{grid-column:span 2}}
+@media(max-width:480px){.grid-gal{grid-template-columns:1fr}.grid-gal .g.wide{grid-column:auto}}
+
+#lb{position:fixed;inset:0;z-index:2000;background:rgba(20,20,16,.95);display:none;align-items:center;justify-content:center;padding:24px}
+#lb.open{display:flex}
+#lb img{max-width:94vw;max-height:86vh;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+#lb .lb-cap{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#e7e4d6;font-size:.85rem}
+#lb button{position:absolute;border:1px solid rgba(255,255,255,.3);background:none;color:#fff;cursor:pointer;display:grid;place-items:center;border-radius:50%;transition:.25s}
+#lb button:hover{background:rgba(255,255,255,.14)}
+#lb .lb-x{top:20px;right:24px;width:44px;height:44px;font-size:1.5rem}
+#lb .lb-nav{top:50%;transform:translateY(-50%);width:52px;height:52px;font-size:1.5rem}
+#lb .lb-prev{left:20px}#lb .lb-next{right:20px}
+@media(max-width:600px){#lb .lb-nav{width:42px;height:42px}}
+
 /* ---------- Reveal ---------- */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .reveal.in{opacity:1;transform:none}
