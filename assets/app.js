@@ -35,19 +35,52 @@
     a.addEventListener('click', function () { toggleMenu(false); });
   });
 
-  // Reveal on scroll
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) {
-        e.target.classList.add('in');
-        io.unobserve(e.target);
-      }
+  // Reveal en cascada por sección (basado en scroll — robusto, con failsafe)
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce) {
+    var sel = [
+      '.reveal',
+      '.section .eyebrow', '.section h2', '.section .lead',
+      '.info', '.sp-card', '.fase-card', '.amen', '.fig', '.stat', '.pillar',
+      '.prog', '.plate', '.sw', '.mp-card', '.aliado', '.data-card', '.logo-box', '.uso',
+      '.split-img', '.ubi-map', '.plan-figure', '.radar-wrap', '.credit', '.values',
+      '.cta-form', '.contact-lines', '.gal-strip figure', '.grid-gal .g',
+      '.hero-eyebrow', '.hero h1', '.hero-sub', '.hero-actions', '.hero-spec .spec',
+      '.statement .mark', '.statement h2', '.statement .tag'
+    ].join(',');
+
+    var els = [].slice.call(document.querySelectorAll(sel)).filter(function (el) {
+      return el.parentElement && !el.parentElement.closest(sel);
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.reveal').forEach(function (el, i) {
-    el.style.transitionDelay = (i % 4) * 90 + 'ms';
-    io.observe(el);
-  });
+
+    var counts = new Map();
+    els.forEach(function (el) {
+      var key = el.parentElement;
+      var idx = counts.get(key) || 0;
+      counts.set(key, idx + 1);
+      el.classList.add(el.matches('.split-img, .ubi-map, .plan-figure') ? 'rv-img' : 'rv');
+      el.style.transitionDelay = Math.min(idx * 70, 420) + 'ms';
+    });
+
+    var pending = els.slice();
+    function revealPass() {
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      for (var i = pending.length - 1; i >= 0; i--) {
+        var r = pending[i].getBoundingClientRect();
+        if (r.top < vh * 0.9 && r.bottom > -50) { pending[i].classList.add('in'); pending.splice(i, 1); }
+      }
+      if (!pending.length) window.removeEventListener('scroll', onScrollRev);
+    }
+    var ticking = false;
+    function onScrollRev() {
+      if (!ticking) { ticking = true; requestAnimationFrame(function () { revealPass(); ticking = false; }); }
+    }
+    window.addEventListener('scroll', onScrollRev, { passive: true });
+    window.addEventListener('resize', onScrollRev, { passive: true });
+    setTimeout(revealPass, 1150);   // primera pasada tras el preloader (entrada del hero)
+    window.addEventListener('load', revealPass);
+    setTimeout(function () { pending.forEach(function (el) { el.classList.add('in'); }); pending.length = 0; }, 4500); // failsafe: nada queda oculto
+  }
 
   // Count-up
   function animateCount(el) {
