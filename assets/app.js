@@ -44,7 +44,7 @@
       '.info', '.sp-card', '.fase-card', '.amen', '.fig', '.stat', '.pillar',
       '.prog', '.plate', '.sw', '.mp-card', '.aliado', '.data-card', '.logo-box', '.uso',
       '.split-img', '.ubi-map', '.plan-figure', '.radar-wrap', '.credit', '.values',
-      '.cta-form', '.contact-lines', '.gal-strip figure', '.grid-gal .g',
+      '.cta-form', '.contact-lines', '.gal-strip figure', '.grid-gal .g', '.chart',
       '.hero-eyebrow', '.hero h1', '.hero-sub', '.hero-actions', '.hero-spec .spec',
       '.statement .mark', '.statement h2', '.statement .tag'
     ].join(',');
