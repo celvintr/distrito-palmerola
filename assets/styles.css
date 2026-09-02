@@ -286,6 +286,31 @@ body.subpage #nav{background:rgba(240,237,228,.95);backdrop-filter:blur(14px);bo
   .page-hero{min-height:52vh}
 }
 
+/* ---------- Tarjetas descriptivas (espacios / tipologías) ---------- */
+.sp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;margin-top:clamp(1.8rem,4vw,2.6rem)}
+.sp-card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1.6rem 1.7rem;transition:.3s}
+.sp-card:hover{border-color:var(--olive)}
+.sp-card .role{font:600 .64rem var(--body-f);letter-spacing:.14em;text-transform:uppercase;color:var(--olive);display:block;margin-bottom:.5rem}
+.sp-card h4{font:400 1.3rem var(--display);color:var(--ink);margin-bottom:.5rem}
+.sp-card p{color:var(--body);font-size:.9rem}
+@media(max-width:760px){.sp-grid{grid-template-columns:1fr}}
+
+/* ---------- Pilares / manifiesto ---------- */
+.pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:clamp(1.8rem,4vw,2.6rem);border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--line)}
+.pillar{background:var(--card);padding:1.9rem;display:flex;gap:1.1rem;align-items:flex-start}
+.pillar .n{font:300 2rem var(--display);color:var(--sage);line-height:1;flex:none}
+.pillar h4{font:400 1.2rem var(--display);color:var(--ink);margin-bottom:.4rem}
+.pillar p{color:var(--body);font-size:.9rem}
+@media(max-width:760px){.pillars{grid-template-columns:1fr}}
+.manifesto{background:var(--dark);color:#e7e4d6}
+.manifesto .mf{max-width:820px}
+.manifesto .eyebrow{color:var(--sage)}.manifesto .eyebrow::before{background:var(--sage)}
+.manifesto h2{color:#f4f2e8;font-weight:300;margin-bottom:1.4rem}
+.manifesto p{color:#c9c6b6;font-size:1.05rem;margin-bottom:1rem}
+.manifesto .big{font-family:var(--display);font-weight:300;font-size:clamp(1.5rem,3vw,2.2rem);color:#fff;line-height:1.15;margin:1.4rem 0}
+.values{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
+.values span{font-size:.82rem;color:#e7e4d6;border:1px solid rgba(255,255,255,.22);border-radius:100px;padding:.4rem .9rem}
+
 /* ---------- Mix de usos (programa) ---------- */
 .prog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:.7rem;margin-top:clamp(1.8rem,4vw,2.6rem)}
 .prog{display:flex;align-items:center;gap:.65rem;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:.85rem 1rem;font-size:.9rem;color:var(--ink);transition:.3s}
